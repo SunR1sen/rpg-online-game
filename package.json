@@ -8,8 +8,10 @@
   "scripts": {
     "lint": "eslint src/**/*.js",
     "prettier": "prettier --write .",
-    "dev": "npx webpack server",
-    "prepare": "husky install"
+    "dev": "cross-env NODE_ENV=development webpack server",
+    "prepare": "husky install",
+    "build": "cross-env NODE_ENV=production webpack",
+    "build:dev": "cross-env NODE_ENV=development webpack"
   },
   "devDependencies": {
     "@babel/core": "^7.14.6",
