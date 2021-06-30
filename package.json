@@ -6,7 +6,8 @@
   "license": "MIT",
   "description": "RPG Online Game",
   "scripts": {
-    "lint": "yarn eslint src/**/*.js"
+    "lint": "yarn eslint src/**/*.js",
+    "prettier": "yarn prettier --write ."
   },
   "devDependencies": {
     "@babel/core": "^7.14.6",
