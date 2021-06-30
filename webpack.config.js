@@ -1,11 +1,11 @@
-const path = require("path");
-const HTMLWebpackPlugin = require('html-webpack-plugin')
+const path = require('path');
+const HTMLWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    mode: "development",
+    mode: 'development',
     entry: path.resolve(__dirname, 'src/index.js'),
     output: {
-        filename: "main.js",
+        filename: 'main.js',
         path: path.resolve(__dirname, 'dist'),
     },
     watch: true,
@@ -19,13 +19,13 @@ module.exports = {
                 test: /\.js$/,
                 loader: 'babel-loader',
                 exclude: [/node_modules/],
-            }
-        ]
+            },
+        ],
     },
     plugins: [
         new HTMLWebpackPlugin({
             template: path.resolve(__dirname, 'public/index.html'),
-        })
+        }),
     ],
     devServer: {
         port: 3000,
@@ -33,5 +33,5 @@ module.exports = {
         open: true,
         hot: true,
         historyApiFallback: true,
-    }
-}
+    },
+};
