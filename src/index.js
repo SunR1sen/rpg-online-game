@@ -15,8 +15,8 @@ const characterMove = {
   left: false,
   right: false,
 };
-let pY = 0;
-let pX = 0;
+let pY = canvas.offsetHeight / 2 - spriteHeight;
+let pX = canvas.offsetWidth / 2 - spriteWidth;
 
 const keyDownHandler = (e) => {
   if (e.key === 'Down' || e.key === 'ArrowDown') {
