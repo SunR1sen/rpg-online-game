@@ -19,33 +19,33 @@ let pY = 0;
 let pX = 0;
 
 const keyDownHandler = (e) => {
-    if (e.key === "Down" || e.key === "ArrowDown") {
-        characterMove.bottom = true;
-    }
-    if (e.key === "Up" || e.key === "ArrowUp") {
-        characterMove.up = true;
-    }
-    if (e.key === "Left" || e.key === "ArrowLeft") {
-        characterMove.left = true;
-    }
-    if (e.key === "Right" || e.key === "ArrowRight") {
-        characterMove.right = true;
-    }
+  if (e.key === 'Down' || e.key === 'ArrowDown') {
+    characterMove.bottom = true;
+  }
+  if (e.key === 'Up' || e.key === 'ArrowUp') {
+    characterMove.up = true;
+  }
+  if (e.key === 'Left' || e.key === 'ArrowLeft') {
+    characterMove.left = true;
+  }
+  if (e.key === 'Right' || e.key === 'ArrowRight') {
+    characterMove.right = true;
+  }
 };
 
 const keyUpHandler = (e) => {
-    if (e.key === "Down" || e.key === "ArrowDown") {
-        characterMove.bottom = false;
-    }
-    if (e.key === "Up" || e.key === "ArrowUp") {
-        characterMove.up = false;
-    }
-    if (e.key === "Left" || e.key === "ArrowLeft") {
-        characterMove.left = false;
-    }
-    if (e.key === "Right" || e.key === "ArrowRight") {
-        characterMove.right = false;
-    }
+  if (e.key === 'Down' || e.key === 'ArrowDown') {
+    characterMove.bottom = false;
+  }
+  if (e.key === 'Up' || e.key === 'ArrowUp') {
+    characterMove.up = false;
+  }
+  if (e.key === 'Left' || e.key === 'ArrowLeft') {
+    characterMove.left = false;
+  }
+  if (e.key === 'Right' || e.key === 'ArrowRight') {
+    characterMove.right = false;
+  }
 };
 
 document.addEventListener('keydown', keyDownHandler);
