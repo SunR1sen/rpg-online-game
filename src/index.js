@@ -56,7 +56,7 @@ let spritePosY = 0;
 
 img.addEventListener('load', () => {
   setInterval(() => {
-    if (characterMove.bottom && pY < (600 - spriteHeight)) {
+    if (characterMove.bottom && pY < 600 - spriteHeight) {
       pY += 10;
       spritePosY = 0;
       cycle = (cycle + 1) % shots;
@@ -71,7 +71,7 @@ img.addEventListener('load', () => {
       spritePosY = spriteHeight;
       cycle = (cycle + 1) % shots;
     }
-    if (characterMove.right && pX < (600 - spriteWidth)) {
+    if (characterMove.right && pX < 600 - spriteWidth) {
       pX += 10;
       spritePosY = spriteHeight * 2;
       cycle = (cycle + 1) % shots;
