@@ -18,6 +18,9 @@ const characterMove = {
 let pY = canvas.offsetHeight / 2 - spriteHeight;
 let pX = canvas.offsetWidth / 2 - spriteWidth;
 
+ctx.fillStyle = 'green';
+ctx.fillRect(0, 0, 600, 600);
+
 const keyDownHandler = (e) => {
   if (e.key === 'Down' || e.key === 'ArrowDown') {
     characterMove.bottom = true;
@@ -78,6 +81,8 @@ img.addEventListener('load', () => {
       cycle = (cycle + 1) % shots;
     }
     ctx.clearRect(0, 0, 600, 600);
+    ctx.fillStyle = 'green';
+    ctx.fillRect(0, 0, 600, 600);
     ctx.drawImage(img, cycle * spriteWidth, spritePosY, spriteWidth, spriteHeight, pX, pY, 48, 48);
     requestAnimationFrame(step);
   };
