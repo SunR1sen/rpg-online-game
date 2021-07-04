@@ -62,22 +62,22 @@ img.addEventListener('load', () => {
   const step = () => {
     if (characterMove.bottom && pY < canvas.offsetHeight - spriteHeight) {
       pY += STEP_SIZE;
-      spritePosY = 0;
+      spritePosY = 0; // back side
       cycle = (cycle + 1) % shots;
     }
     if (characterMove.up && pY > 0) {
       pY -= STEP_SIZE;
-      spritePosY = spriteHeight * 3;
+      spritePosY = spriteHeight * 3; // front side
       cycle = (cycle + 1) % shots;
     }
     if (characterMove.left && pX > 0) {
       pX -= STEP_SIZE;
-      spritePosY = spriteHeight;
+      spritePosY = spriteHeight; // left side
       cycle = (cycle + 1) % shots;
     }
     if (characterMove.right && pX < canvas.offsetWidth - spriteWidth) {
       pX += STEP_SIZE;
-      spritePosY = spriteHeight * 2;
+      spritePosY = spriteHeight * 2; // right side
       cycle = (cycle + 1) % shots;
     }
     ctx.clearRect(0, 0, 600, 600);
