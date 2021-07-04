@@ -60,7 +60,7 @@ const STEP_SIZE = 5;
 
 img.addEventListener('load', () => {
   const step = () => {
-    if (characterMove.bottom && pY < 600 - spriteHeight) {
+    if (characterMove.bottom && pY < canvas.offsetHeight - spriteHeight) {
       pY += STEP_SIZE;
       spritePosY = 0;
       cycle = (cycle + 1) % shots;
@@ -75,7 +75,7 @@ img.addEventListener('load', () => {
       spritePosY = spriteHeight;
       cycle = (cycle + 1) % shots;
     }
-    if (characterMove.right && pX < 600 - spriteWidth) {
+    if (characterMove.right && pX < canvas.offsetWidth - spriteWidth) {
       pX += STEP_SIZE;
       spritePosY = spriteHeight * 2;
       cycle = (cycle + 1) % shots;
