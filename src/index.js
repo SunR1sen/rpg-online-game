@@ -15,8 +15,8 @@ const characterMove = {
   left: false,
   right: false,
 };
-let pY = canvas.offsetHeight / 2 - spriteHeight;
-let pX = canvas.offsetWidth / 2 - spriteWidth;
+let pY = canvas.offsetHeight / 2 - spriteHeight / 2;
+let pX = canvas.offsetWidth / 2 - spriteWidth / 2;
 
 ctx.fillStyle = 'green';
 ctx.fillRect(0, 0, 600, 600);
