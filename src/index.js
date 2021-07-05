@@ -80,9 +80,9 @@ img.addEventListener('load', () => {
       spritePosY = spriteHeight * 2; // right side
       cycle = (cycle + 1) % shots;
     }
-    ctx.clearRect(0, 0, 600, 600);
+    ctx.clearRect(0, 0, canvas.offsetWidth, canvas.offsetHeight);
     ctx.fillStyle = 'green';
-    ctx.fillRect(0, 0, 600, 600);
+    ctx.fillRect(0, 0, canvas.offsetWidth, canvas.offsetHeight);
     ctx.drawImage(img, cycle * spriteWidth, spritePosY, spriteWidth, spriteHeight, pX, pY, 48, 48);
     requestAnimationFrame(step);
   };
