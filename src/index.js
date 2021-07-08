@@ -59,7 +59,7 @@ let spritePosY = 0;
 const STEP_SIZE = 5;
 
 img.addEventListener('load', () => {
-  const step = () => {
+  const walk = () => {
     if (characterMove.bottom && pY < canvas.offsetHeight - spriteHeight) {
       pY += STEP_SIZE;
       spritePosY = 0; // back side
@@ -84,7 +84,7 @@ img.addEventListener('load', () => {
     ctx.fillStyle = 'green';
     ctx.fillRect(0, 0, canvas.offsetWidth, canvas.offsetHeight);
     ctx.drawImage(img, cycle * spriteWidth, spritePosY, spriteWidth, spriteHeight, pX, pY, 48, 48);
-    requestAnimationFrame(step);
+    window.requestAnimationFrame(walk);
   };
-  requestAnimationFrame(step);
+  window.requestAnimationFrame(walk);
 });
