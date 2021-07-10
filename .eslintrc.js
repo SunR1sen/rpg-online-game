@@ -13,5 +13,6 @@ module.exports = {
     'no-unused-vars': 'warn',
     'guard-for-in': 'warn',
     'no-restricted-syntax': 'warn',
+    'object-curly-newline': 'off',
   },
 };
