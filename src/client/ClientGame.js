@@ -1,4 +1,5 @@
 import ClientEngine from './ClientEngine';
+import sprites from '../config/sprites';
 
 class ClientGame {
   constructor(cfg) {
@@ -15,7 +16,9 @@ class ClientGame {
   }
 
   initEngine() {
-    this.engine.start();
+    this.engine.loadSprites(sprites).then(() => {
+      this.engine.start();
+    });
   }
 
   static init(cfg) {
