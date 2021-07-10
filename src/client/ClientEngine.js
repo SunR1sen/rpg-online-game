@@ -3,6 +3,9 @@ class ClientEngine {
     Object.assign(this, {
       canvas,
       ctx: null,
+      imageLoaders: [],
+      sprites: {},
+      images: {},
     });
 
     this.ctx = canvas.getContext('2d');
@@ -23,6 +26,33 @@ class ClientEngine {
 
   initNextFrame() {
     window.requestAnimationFrame(this.loop);
+  }
+
+  loadSprites(spritesGroup) {
+    this.imageLoaders = [];
+
+    for (const groupName in spritesGroup) {
+      const group = spritesGroup[groupName];
+      this.sprites[groupName] = group;
+
+      for (const spriteName in group) {
+        const { img } = group[spriteName];
+        if (!this.images[img]) {
+          this.imageLoaders.push(this.loadImage(img));
+        }
+      }
+    }
+
+    return Promise.all(this.imageLoaders);
+  }
+
+  loadImage(url) {
+    return new Promise((resolve) => {
+      const image = new Image();
+      this.images[url] = image;
+      image.onLoad = () => resolve(image);
+      image.src = url;
+    });
   }
 }
 
