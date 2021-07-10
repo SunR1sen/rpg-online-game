@@ -11,5 +11,7 @@ module.exports = {
   rules: {
     'no-console': 'warn',
     'no-unused-vars': 'warn',
+    'guard-for-in': 'warn',
+    'no-restricted-syntax': 'warn',
   },
 };
