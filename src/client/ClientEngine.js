@@ -16,7 +16,7 @@ class ClientEngine {
   loop() {
     const { ctx, canvas } = this;
     ctx.fillStyle = 'black';
-    ctx.clearRect(0, 0, canvas.offsetWidth, canvas.offsetHeight);
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     this.initNextFrame();
   }
