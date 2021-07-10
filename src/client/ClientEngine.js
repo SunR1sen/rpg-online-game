@@ -1,3 +1,5 @@
+import EventSourceMixin from '../common/EventSourceMixin';
+
 class ClientEngine {
   constructor(canvas) {
     Object.assign(this, {
@@ -16,11 +18,12 @@ class ClientEngine {
     this.loop();
   }
 
-  loop() {
+  loop(timestamp) {
     const { ctx, canvas } = this;
     ctx.fillStyle = 'black';
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
+    this.trigger('render', timestamp);
     this.initNextFrame();
   }
 
@@ -50,10 +53,12 @@ class ClientEngine {
     return new Promise((resolve) => {
       const image = new Image();
       this.images[url] = image;
-      image.onLoad = () => resolve(image);
+      image.onload = () => resolve(image);
       image.src = url;
     });
   }
 }
+
+Object.assign(ClientEngine.prototype, EventSourceMixin);
 
 export default ClientEngine;

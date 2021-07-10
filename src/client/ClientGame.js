@@ -8,6 +8,7 @@ class ClientGame {
     });
 
     this.engine = this.createEngine();
+    console.log(this.engine);
     this.initEngine();
   }
 
@@ -17,6 +18,10 @@ class ClientGame {
 
   initEngine() {
     this.engine.loadSprites(sprites).then(() => {
+      console.log('ДО РЕГИСТРАЦИИ');
+      this.engine.on('render', (_, time) => {
+        console.log('RENDER ', time);
+      });
       this.engine.start();
     });
   }
