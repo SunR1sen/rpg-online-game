@@ -28,6 +28,10 @@ class ClientCell extends PositionedObject {
     this.objects = cellConfig[0].map((objCfg) => new ClientGameObject({ cell: this, objCfg }));
   }
 
+  static cellIsGrass(cell) {
+    return Boolean(cell.findObjectsByType('grass').length);
+  }
+
   render(time) {
     const { objects } = this;
 
