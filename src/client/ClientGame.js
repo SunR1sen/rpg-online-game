@@ -9,11 +9,16 @@ class ClientGame {
     Object.assign(this, {
       cfg,
       gameObjects,
+      player: null,
     });
 
     this.engine = this.createEngine();
     this.world = this.createWorld();
     this.initEngine();
+  }
+
+  setPlayer(player) {
+    this.player = player;
   }
 
   createWorld() {
