@@ -14,5 +14,6 @@ module.exports = {
     'guard-for-in': 'warn',
     'no-restricted-syntax': 'warn',
     'object-curly-newline': 'off',
+    'import/prefer-default-export': 'off',
   },
 };
